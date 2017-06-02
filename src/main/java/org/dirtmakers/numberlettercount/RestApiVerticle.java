@@ -54,7 +54,7 @@ public class RestApiVerticle extends AbstractVerticle {
             router.post("/lettercount/").handler(this::letterCountHandler);
             
             // Option 'III'...
-            router.get("/range/*").handler(this::rangeHandler);
+            router.post("/range").handler(this::rangeHandler);
             
             // Invoke an HTTP server to handle requests.
             HttpServer httpServer = vertx.createHttpServer();
@@ -120,7 +120,7 @@ public class RestApiVerticle extends AbstractVerticle {
     
     private void rangeHandler(RoutingContext context) {
         HttpServerResponse response = context.response();
-        
+        System.out.println(context.request().params().size());
         // Extract the "from" and "to" parameters from the GET request.
         int fromNum = Integer.parseInt(context.request().getParam("from"));
         int toNum = Integer.parseInt(context.request().getParam("to"));
@@ -134,7 +134,7 @@ public class RestApiVerticle extends AbstractVerticle {
         // pass individual numbers to other worker verticles for processing.
         vertx.eventBus().send("range", rangeObject, (AsyncResult<Message<Object>> result) -> {
            if (result.succeeded()) {
-               String responseMessage = "<p>" + result.result().body() + "</p>";
+               String responseMessage = "<h1>" + result.result().body() + "</h1>";
                response.setStatusCode(200).end(responseMessage);
            } else {
                response.setStatusCode(500).end(result.cause().getMessage());

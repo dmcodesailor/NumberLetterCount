@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "*.jar": "explorerExcludedFiles",
+    "*.class": "explorerExcludedFiles",
+    "*.lst": "explorerExcludedFiles"
+  }
+}

@@ -39,6 +39,9 @@ public class BootstrapVerticle extends AbstractVerticle {
         result.add(new org.dirtmakers.numberlettercount.NumberToWordsConverterHundredThousands());
         result.add(new org.dirtmakers.numberlettercount.NumberToWordsConverterThousands());
         result.add(new org.dirtmakers.numberlettercount.NumberToWordsConverterLessThanOneThousand());
+        result.add(new org.dirtmakers.numberlettercount.RangeWorker());
+        result.add(new org.dirtmakers.numberlettercount.LetterCounterVerticle());
+        result.add(new org.dirtmakers.numberlettercount.LetterCounterWorker());
         return result;
     }
 

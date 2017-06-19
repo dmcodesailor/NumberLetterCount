@@ -2,15 +2,12 @@
 
 _NOTE:_ This project is based on Vert.x Example Maven Project.  However, it is mostly stripped of those original files.
 
-Example project for creating a Vert.x module with a Gradle build.
+Example project for creating a Vert.x module with a Maven build.
 
-By default this module contains a simple Java verticle which listens on the event bus and responds to `ping!`
-messages with `pong!`.
-
-This example also shows you how to write tests in Java, Groovy, Ruby and Python
+Inspired by _Project Euler_ [Number Letter Counts](https://projecteuler.net/problem=17).
 
 ## TL;DR
-**Netbeans**
+**Netbeans / IntelliJ-IDEA**
 1. Locate the `pom.xml` file
 1. Right-click the `pom.xml` file, choose `Run Maven > Goals...`.
 1. In the `Goals` dialog type `package` in the `Goals:` field.

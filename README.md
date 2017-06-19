@@ -7,7 +7,7 @@ Example project for creating a Vert.x module with a Maven build.
 Inspired by _Project Euler_ [Number Letter Counts](https://projecteuler.net/problem=17).
 
 ## TL;DR
-**Netbeans / IntelliJ-IDEA**
+**Netbeans**
 1. Locate the `pom.xml` file
 1. Right-click the `pom.xml` file, choose `Run Maven > Goals...`.
 1. In the `Goals` dialog type `package` in the `Goals:` field.
